@@ -48,7 +48,29 @@ Paste one or more images and a row of thumbnails sits above the prompt, each lab
 - **Thumbnails appear as soon as you paste.** You don't have to type another key first.
 - **Thumbnails keep their shape.** Wide screenshots stay wide and phone shots stay tall.
 - **Always fits on screen.** Tiles shrink to fit the space above the prompt, so the row never scrolls or gets cut off. If there are too many, the row ends with `+N` for the rest.
-- **Clears on send.** Once the prompt is sent (or the tags are deleted), the row goes away.
+- **Stays with the prompt you sent.** Once the prompt is sent (or the tags are deleted), the row above the prompt goes away, and the sent prompt keeps its tiles under it in the conversation, at most 8 rows tall.
+
+## Open the Full Image
+
+A thumbnail is small, and outside Ghostty and kitty it's half blocks. Every tile's `#n` label opens the original paste, at its full size and in its own format, in the system's image viewer (Preview on macOS):
+
+![Cmd+click a tile's label and the full image opens](docs/open-full-image.svg)
+
+It works the same for prompts you've already sent, so you can scroll back and open any image from earlier in the conversation:
+
+![A sent prompt keeps its thumbnail, and its label still opens the full image](docs/open-from-history.svg)
+
+| Where you are | Above the prompt | Under a sent prompt |
+|---|---|---|
+| Fullscreen mode (`/tui`) | Click `#n`, or ctrl+x tab then the digit | Click `#n` |
+| iTerm2, VS Code, Ghostty, kitty, WezTerm, most others | Cmd+click `#n` (ctrl+click on Linux and Windows) | Cmd+click `#n` |
+| Terminal.app | ctrl+x tab then the digit, or cmd+click the `file://` line | Cmd+click the `file://` line |
+
+- **On the main screen the label is a hyperlink** (OSC 8) to the paste, which your terminal opens. Claude Code only takes the mouse in fullscreen mode, so there the label is a button you click instead.
+- **Terminal.app opens no hyperlinks.** There the label reads `1: #1`: press ctrl+x tab to focus the row, then the digit, and Escape to go back. Your draft stays as it is. Each paste's `file://` URL is also listed on its own line under the tiles, and a cmd+click on it shows the image in Quick Look.
+
+  ![In Terminal.app, cmd+click the file:// line, or press ctrl+x tab and the digit](docs/terminal-app.svg)
+- **Digits go up to 9.** A tenth paste or later still opens from a click or a link, just not from a key.
 
 ## How It Works
 
