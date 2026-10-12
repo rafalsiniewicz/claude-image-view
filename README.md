@@ -4,7 +4,7 @@ A Claude Code mod that shows the images you paste: thumbnails above your prompt 
 
 [![License](https://img.shields.io/github/license/rafalsiniewicz/claude-image-view)](LICENSE)
 
-![Claude Image View in action](claude-image-view.png)
+![Claude Image View in action](docs/images/claude-image-view.png)
 
 ## Install
 
@@ -69,11 +69,11 @@ The `#1` and `#2` labels open the paste at full size.
 
 A thumbnail is small, and outside Ghostty and kitty it's half blocks. Every tile's `#n` label opens the original paste, at its full size and in its own format, in the system's image viewer (Preview on macOS):
 
-![Cmd+click a tile's label and the full image opens](docs/open-full-image.svg)
+![Cmd+click a tile's label and the full image opens](docs/images/open-full-image.svg)
 
 It works the same for prompts you've already sent, so you can scroll back and open any image from earlier in the conversation:
 
-![A sent prompt keeps its thumbnail, and its label still opens the full image](docs/open-from-history.svg)
+![A sent prompt keeps its thumbnail, and its label still opens the full image](docs/images/open-from-history.svg)
 
 | Where you are | Above the prompt | Under a sent prompt |
 |---|---|---|
@@ -84,7 +84,7 @@ It works the same for prompts you've already sent, so you can scroll back and op
 - **On the main screen the label is a hyperlink** (OSC 8) to the paste, which your terminal opens. Claude Code only takes the mouse in fullscreen mode, so there the label is a button you click instead.
 - **Terminal.app opens no hyperlinks.** There the label reads `1: #1`: press ctrl+x tab to focus the row, then the digit, and Escape to go back. Your draft stays as it is. Each paste's `file://` URL is also listed on its own line under the tiles, and a cmd+click on it shows the image in Quick Look.
 
-  ![In Terminal.app, cmd+click the file:// line, or press ctrl+x tab and the digit](docs/terminal-app.svg)
+  ![In Terminal.app, cmd+click the file:// line, or press ctrl+x tab and the digit](docs/images/terminal-app.svg)
 - **Digits go up to 9.** A tenth paste or later still opens from a click or a link, just not from a key.
 
 ## How It Works
